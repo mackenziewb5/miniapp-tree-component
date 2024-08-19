@@ -1,0 +1,21 @@
+<!-- 树形组件 tree.wxml -->
+<view class="container">
+  <view>
+    <view wx:for="{{ treeList }}" wx:for-item="item" wx:key="id">
+      <view class="tree-item">
+        <view bind:tap="showChildren" data-id="{{ item.id }}" data-parentid="{{ item.parentCode }}" class="tree-label">
+          <view class="icon-play {{ item.collapse?'expanded':'' }}" wx:if="{{ item.children.length>0 }}"></view>
+          <view class="{{ item.selected==1? 'current':'general' }}">{{item.catName}}
+            <view class="icon-checked" catch:tap="{{types=='add'?'handleClick':''}}" data-currentitem="{{ item }}" wx:if="{{  item.selected==1 }}"></view>
+            <view class="{{types=='add'?'icon-unChecked':'icon-disabled'}}" catch:tap="{{types=='add'?'handleClick':''}}"  data-currentitem="{{ item }}" wx:if="{{  item.selected==0||item.selected==undefined }}"></view>
+            <view class="icon-hasSonChecked" catch:tap="{{types=='add'?'handleClick':''}}"  data-currentitem="{{ item }}" wx:if="{{  item.selected==2 }}"></view>
+          </view>
+        </view>
+      </view>
+      <!-- 递归组件 -->
+      <block wx:if="{{ item.children && item.collapse }}">
+        <tree treeList="{{ item.children }}" treeListTemp="{{ treeListTemp }}" currentItem="{{ currentItem }}" types="{{types}}"></tree>
+      </block>
+    </view>
+  </view>
+</view>

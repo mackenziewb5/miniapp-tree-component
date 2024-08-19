@@ -1,0 +1,23 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.tree-container{
+  width: 90%;
+  /* height:1000rpx; */
+  border:2rpx solid #b7d2ff;
+  box-shadow: 0 0 20rpx 2rpx #b7d2ff;
+  border-radius: 20rpx;
+  margin:20rpx;
+  padding:20rpx 0;
+  /* overflow-y: auto; */
+}

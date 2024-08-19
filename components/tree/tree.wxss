@@ -1,0 +1,146 @@
+/*tree.wxss*/
+.container {
+  margin-left: 100rpx;
+}
+
+view {
+  font-size: 16px;
+  font-family: PingFangSC-Regular;
+}
+
+.tree-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.tree-label {
+  padding-right: 15rpx;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.icon-circle {
+  position: absolute;
+  left: -46rpx;
+}
+
+.current {
+  color: #1989fa;
+  font-size: 30rpx;
+}
+
+.general {
+  color: #1c2438;
+  font-size: 30rpx;
+}
+
+.icon-checked {
+  position: absolute;
+  left: -48rpx;
+  top: 0rpx;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  padding: 6rpx 2rpx 6rpx 10rpx;
+  background-color: #1989fa;
+  border: 2rpx solid #1989fa;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.icon-checked::after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  /* 调整对勾位置 */
+  left: 12%;
+  /* 调整对勾位置 */
+  width: 25%;
+  /* 对勾的横向长度 */
+  height: 45%;
+  /* 对勾的纵向长度 */
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transform-origin: bottom left;
+}
+
+.icon-unChecked {
+  position: absolute;
+  left: -50rpx;
+  top: 0rpx;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  padding: 6rpx 2rpx 6rpx 10rpx;
+  border: 2rpx solid #1989fa;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.icon-disabled {
+  position: absolute;
+  left: -50rpx;
+  top: 0rpx;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  padding: 6rpx 2rpx 6rpx 10rpx;
+  border: 2rpx solid #aaa;
+  background-color: #eee;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+/* 包含部分被勾选的子结点 */
+.icon-hasSonChecked {
+  position: absolute;
+  left: -50rpx;
+  top: 0rpx;
+  width: 26rpx;
+  height: 26rpx;
+  line-height: 26rpx;
+  padding: 4rpx 0rpx 8rpx 12rpx;
+  background-color: #1989fa;
+  border: 2rpx solid #1989fa;
+  border-radius: 8rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+
+.icon-hasSonChecked::before {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  content: '';
+  width: 12rpx; /* 横条宽度，相对于容器宽度的百分比 */
+  height: 2rpx; /* 横条高度 */
+  background-color: #fff; /* 白色横条 */
+}
+
+/* 三角形展开图标（未展开） */
+.icon-play {
+  position: absolute;
+  left: -78rpx;
+  width: 0rpx;
+  height: 0rpx;
+  border-right: 12rpx solid transparent;
+  border-top: 12rpx solid transparent;
+  border-bottom: 12rpx solid transparent;
+  border-left: 12rpx solid #333;
+}
+
+/* 三角形展开图标（已展开） */
+.icon-play.expanded {
+  transform: rotate(90deg);
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+  left: -84rpx
+}

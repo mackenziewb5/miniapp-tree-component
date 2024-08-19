@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="tree-container">
+    <tree treeList="{{ treeData }}" treeListTemp="{{ treeData }}" initialSelectedCodes="{{classifyNumbers}}" types="{{types}}" bind:resetTree="resetTree" />
+  </view>
+</view>
