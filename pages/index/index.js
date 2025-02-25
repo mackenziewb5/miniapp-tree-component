@@ -1,23 +1,24 @@
-import treeData from './treeData.js'; // 引入数据文件
+//index.js
+import treeData from './treeData.js' // 引入数据文件
 Page({
   data: {
-    types:'add',
-    treeData:treeData
+    types: 'add', // 用来区分新增和编辑和查看三种情况。
+    treeData: treeData,
   },
   resetTree(e) {
     this.setData({
       currentCheck: e.detail.checkedItem,
-      treeData: e.detail.changeList
+      treeData: e.detail.changeList,
     })
     console.log(e, 'e')
     // 处理选中品类
     let selectedArr = this.getCheckedItemsArray(this.data.treeData)
     console.log(selectedArr, 'selectedArr')
     this.setData({
-      ['tableForm.selectedCodeList']: selectedArr
+      ['tableForm.selectedCodeList']: selectedArr,
     })
   },
-    /**
+  /**
    * 处理勾选的数据-转换成想要的传参形式
    * @param {Array} treeData - 树结构数据
    * @param {Array} checkedItems - 勾选的节点
@@ -33,7 +34,7 @@ Page({
         path[classifyNoList[level]] = node.catCode || ''
         // 记录路径
         result.push({
-          ...path
+          ...path,
         })
       }
 
@@ -47,7 +48,7 @@ Page({
         node.children.forEach(child => {
           processNode(child, level + 1, {
             ...path,
-            [classifyNoList[level]]: node.catCode || ''
+            [classifyNoList[level]]: node.catCode || '',
           })
         })
       }
